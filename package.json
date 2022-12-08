@@ -1,0 +1,29 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "devDependencies": {
+    "bootstrap": "^4.6.0",
+    "gatsby": "^5.2.0",
+    "gatsby-plugin-sass": "^6.2.0",
+    "normalize.css": "^8.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scroll": "^1.8.8",
+    "react-ui-scrollspy": "github:GuilhermeRaposo/react-ui-scrollspy",
+    "@react-icons/all-files": "^4.1.0",
+    "sass": "^1.56.1",
+    "typed.js": "^2.0.12"
+  }
+}
