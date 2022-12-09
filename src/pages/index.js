@@ -1,4 +1,5 @@
 import * as React from "react"
+import { graphql } from "gatsby";
 
 import Layout from "../components/layout"
 import { Seo } from "../components/seo"
@@ -14,21 +15,41 @@ import "../styles/style.css"
 
 import ScrollSpy from "react-ui-scrollspy";
 
+
+// Prevents page from restoring scroll position on reload and breaking the rest of the content
+// Why is it happening???
+const isBrowser = typeof window !== "undefined"
+if (isBrowser) {
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  }
+}
+
 export default class IndexPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      navHeightOffset: 0
+      navHeightOffset: 0,
+      logos: []
     };
   }
-
+  
   getNavHeightOffset = (value) => {
     this.setState({ navHeightOffset: value })
   };
 
+  componentDidMount() {
+    this.setState({
+      logos: [
+        this.props.data.logo1.childImageSharp.gatsbyImageData,
+        this.props.data.logo2.childImageSharp.gatsbyImageData
+      ]
+    })
+  }
+
   render() {
     return (
-      <Layout updateNavHeightOffset={this.getNavHeightOffset}>
+      <Layout logos={this.state.logos} updateNavHeightOffset={this.getNavHeightOffset}>
         <ScrollSpy scrollThrottle={30} offsetTop={0} activeClass="active" updateHistoryStack={false}>
           <Intro id="home" navHeightOffset={this.state.navHeightOffset}/>
           <About id="about"/>
@@ -47,3 +68,20 @@ export class Head extends React.Component {
     );
   }
 };
+
+export const logoQuery = graphql`
+query MyQuery {
+  logo1:
+  	file(relativePath: {eq: "logo1.png"}) {
+    	childImageSharp {
+      	gatsbyImageData(placeholder: NONE, layout: CONSTRAINED)
+    	}
+  	}
+  logo2:
+  	file(relativePath: {eq: "logo2.png"}) {
+    	childImageSharp {
+      	gatsbyImageData(placeholder: NONE, layout: CONSTRAINED)
+    	}
+  	} 
+}
+`

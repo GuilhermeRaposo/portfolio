@@ -30,7 +30,7 @@ export default class Contact extends React.Component {
                         </div>
                         <div className="socials">
                           <ul>
-                            <li>
+                            <li key="github">
                               <a
                                 href="https://github.com/GuilhermeRaposo"
                                 target="_blank"
@@ -43,7 +43,7 @@ export default class Contact extends React.Component {
                                 </span>
                               </a>
                             </li>
-                            <li>
+                            <li key="linkedin">
                               <a
                                 href="https://www.linkedin.com/in/guilherme-raposo-470010199/"
                                 target="_blank"

@@ -1,14 +1,14 @@
 import React from "react";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { Link } from 'react-scroll'
-
-import logo1 from "../images/logo1.png";
-import logo2 from "../images/logo2.png";
 
 export default class Navbar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            logo: logo1,
+            logo1: undefined,
+            logo2: undefined,
+            currentLogo: undefined,
             navHeightOffset: 0,
             navbarReduce: false
         };
@@ -19,9 +19,14 @@ export default class Navbar extends React.Component {
     }
 
     componentDidMount() {
-      const navHeight = this.navElement.clientHeight;
-      this.setState({ navHeightOffset: -Math.abs(navHeight) });
-      this.props.updateNavHeightOffset(navHeight)
+        console.log("nav")
+        console.log(this.props.logos)
+        this.setState({
+            currentLogo: 1,
+        })
+        const navHeight = this.navElement.clientHeight;
+        this.setState({ navHeightOffset: -Math.abs(navHeight) });
+        this.props.updateNavHeightOffset(navHeight)
 
         window.addEventListener("scroll", () => {
           if (window.pageYOffset > 50) {
@@ -31,7 +36,7 @@ export default class Navbar extends React.Component {
             document
               .querySelector(".navbar-expand-md")
               .classList.remove("navbar-trans");
-            this.setState({ logo: logo2 });
+            this.setState({ currentLogo: 2 });
           } else {
             document
               .querySelector(".navbar-expand-md")
@@ -39,7 +44,7 @@ export default class Navbar extends React.Component {
             document
               .querySelector(".navbar-expand-md")
               .classList.remove("navbar-reduce");
-            this.setState({ logo: logo1 });
+            this.setState({ currentLogo: 1 });
           }
         });
       }
@@ -55,8 +60,8 @@ export default class Navbar extends React.Component {
             >
                 <div className="container">
                     <a className="navbar-brand js-scroll" href="#page-top">
-                        <img
-                            src={this.state.logo}
+                        <GatsbyImage
+                            image={this.props.logos[this.state.currentLogo - 1]}
                             alt="logo"
                             style={{ maxWidth: "100px" }}
                         />

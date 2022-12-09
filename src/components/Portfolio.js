@@ -1,12 +1,13 @@
 import React from "react";
 import { Element } from "react-scroll";
+import { StaticImage } from "gatsby-plugin-image"
 
 // Images
-import discord from "../images/discord.png"
-import galaxyEdge from "../images/galaxy-edge.png";
-import mouse from "../images/mouse.png" ;
-import visitArrow from "../images/visit-arrow.png";
-import code from "../images/code.png";
+const discord = "../images/discord.png";
+const galaxyEdge = "../images/galaxy-edge.png";
+const mouse = "../images/mouse.png";
+const visitArrow = "../images/visit-arrow.png";
+const code = "../images/code.png";
 
 export default class Portfolio extends React.Component {
     constructor(props) {
@@ -49,7 +50,7 @@ export default class Portfolio extends React.Component {
                         <div className="col-md-4">
                                 <div className="work-box container">
                                     <div className="work-img">
-                                        <img src={discord} alt="" className="img-fluid" />
+                                        <StaticImage src={discord} alt="Discord logo" className="img-fluid" />
                                     </div>
                                     <div className="work-content">
                                         <div className="row">
@@ -68,7 +69,7 @@ export default class Portfolio extends React.Component {
                                                             <span className="w-link-button">WIP</span>
                                                         </div>
                                                         <div className="link">
-                                                            <a href={this.state.links.GameManager.code} className="w-link-button"><img src={code} alt=""/> code</a>
+                                                            <a href={this.state.links.GameManager.code} className="w-link-button"><StaticImage src={code} alt=""/> code</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -81,7 +82,7 @@ export default class Portfolio extends React.Component {
                             <div className="col-md-4">
                                 <div className="work-box container">
                                     <div className="work-img">
-                                        <img src={galaxyEdge} alt="" className="img-fluid" />
+                                        <StaticImage src={galaxyEdge} alt="" className="img-fluid" />
                                     </div>
                                     <div className="work-content">
                                         <div className="row">
@@ -96,10 +97,10 @@ export default class Portfolio extends React.Component {
                                                     </span>
                                                     <div className="w-links row">
                                                         <div className="link">
-                                                            <a href={this.state.links.GalaxyEdge.app} className="w-link-button">visit <img src={visitArrow} alt=""/></a>
+                                                            <a href={this.state.links.GalaxyEdge.app} className="w-link-button">visit <StaticImage src={visitArrow} alt=""/></a>
                                                         </div>
                                                         <div className="link">
-                                                            <a href={this.state.links.GalaxyEdge.code} className="w-link-button"><img src={code} alt=""/> code</a>
+                                                            <a href={this.state.links.GalaxyEdge.code} className="w-link-button"><StaticImage src={code} alt=""/> code</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -112,7 +113,7 @@ export default class Portfolio extends React.Component {
                             <div className="col-md-4">
                                 <div className="work-box container">
                                     <div className="work-img">
-                                        <img src={mouse} alt="" className="img-fluid" />
+                                        <StaticImage src={mouse} alt="" className="img-fluid" />
                                     </div>
                                     <div className="work-content">
                                         <div className="row">
@@ -127,10 +128,10 @@ export default class Portfolio extends React.Component {
                                                     </span>
                                                     <div className="w-links row">
                                                         <div className="link">
-                                                            <a href={this.state.links.DoubleClick.app} className="w-link-button">visit <img src={visitArrow} alt=""/></a>
+                                                            <a href={this.state.links.DoubleClick.app} className="w-link-button">visit <StaticImage src={visitArrow} alt=""/></a>
                                                         </div>
                                                         <div className="link">
-                                                            <a href={this.state.links.DoubleClick.code} className="w-link-button"><img src={code} alt=""/> code</a>
+                                                            <a href={this.state.links.DoubleClick.code} className="w-link-button"><StaticImage src={code} alt=""/> code</a>
                                                         </div>
                                                     </div>
                                                 </div>

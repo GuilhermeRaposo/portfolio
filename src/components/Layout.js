@@ -5,7 +5,7 @@ export default class Layout extends React.Component {
     render() {
         return (
         <>
-            <Navbar updateNavHeightOffset={this.props.updateNavHeightOffset} />
+            <Navbar logos={this.props.logos} updateNavHeightOffset={this.props.updateNavHeightOffset} />
             <main>{this.props.children}</main>
         </>
        )
