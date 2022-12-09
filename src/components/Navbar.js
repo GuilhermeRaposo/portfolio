@@ -19,8 +19,6 @@ export default class Navbar extends React.Component {
     }
 
     componentDidMount() {
-        console.log("nav")
-        console.log(this.props.logos)
         this.setState({
             currentLogo: 1,
         })
