@@ -15,16 +15,6 @@ import "../styles/style.css"
 
 import ScrollSpy from "react-ui-scrollspy";
 
-
-// Prevents page from restoring scroll position on reload and breaking the rest of the content
-// Why is it happening???
-const isBrowser = typeof window !== "undefined"
-if (isBrowser) {
-  window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
-  }
-}
-
 export default class IndexPage extends React.Component {
   constructor(props) {
     super(props);
@@ -39,6 +29,10 @@ export default class IndexPage extends React.Component {
   };
 
   componentDidMount() {
+    // Prevents page from restoring scroll position on reload and breaking the rest of the content
+    // Why is it happening???
+    window.scrollTo(0,0);
+
     this.setState({
       logos: [
         this.props.data.logo1.childImageSharp.gatsbyImageData,
