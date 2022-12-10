@@ -10,7 +10,7 @@ export default class Navbar extends React.Component {
             logo2: undefined,
             currentLogo: undefined,
             navHeightOffset: 0,
-            isNavOpen: false,
+            isMobileNavOpen: false,
             navBarTrans: true,
             navBarReduce: false,
             navListCollapse: true
@@ -21,7 +21,7 @@ export default class Navbar extends React.Component {
         this.setState({ 
             navListCollapse: false,
             navBarReduce: true,
-            isNavOpen: true,
+            isMobileNavOpen: true,
             currentLogo: 2
          });
     }
@@ -30,14 +30,13 @@ export default class Navbar extends React.Component {
         this.setState({
             navListCollapse: true,
             navBarReduce: (window.scrollY > 50) ? true : false,
-            isNavOpen: false,
+            isMobileNavOpen: false,
             currentLogo: (window.scrollY > 50) ? 2 : 1
         })
     }
 
     handleClickNavBarToggler = () => {
-        console.log(window.scrollY)
-        if (!this.state.isNavOpen) {
+        if (!this.state.isMobileNavOpen) {
             this.openNavBar();
         }
         else {
@@ -46,7 +45,9 @@ export default class Navbar extends React.Component {
     };
 
     handleClickNavBarLink = () => {
-        this.closeNavBar();
+        if (this.state.isMobileNavOpen) {
+            this.closeNavBar();
+        }
     }
 
     componentDidMount() {
@@ -58,21 +59,22 @@ export default class Navbar extends React.Component {
         this.props.updateNavHeightOffset(navHeight)
 
         window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-            this.setState({
-                navBarReduce: true,
-                navBarTrans: false
-            })
-            this.setState({ currentLogo: 2 });
-        } 
-        else {
-            if (!this.state.isNavOpen)
-            this.setState({
-                navBarReduce: false,
-                navBarTrans: true
-            })
-            this.setState({ currentLogo: 1 });
-        }
+            console.log(window.pageYOffset)
+            if (window.scrollY > 50) {
+                this.setState({
+                    navBarReduce: true,
+                    navBarTrans: false
+                });
+                this.setState({ currentLogo: 2 });
+            } 
+            else {
+                if (!this.state.isMobileNavOpen)
+                this.setState({
+                    navBarReduce: false,
+                    navBarTrans: true,
+                    currentLogo: 1
+                });
+            }
         });
       }
 
@@ -117,22 +119,22 @@ export default class Navbar extends React.Component {
                     >
                         <ul className="navbar-nav">
                             <li className="nav-item"  data-to-scrollspy-id="home">
-                                <Link className="nav-link js-scroll" to="home" smooth={true} offset={this.state.navHeightOffset} onClick={this.handleClickNavBarToggler}>
+                                <Link className="nav-link js-scroll" to="home" smooth={true} offset={this.state.navHeightOffset} onClick={this.handleClickNavBarLink}>
                                 Home
                                 </Link>
                             </li>
                             <li className="nav-item active"  data-to-scrollspy-id="about">
-                                <Link className="nav-link js-scroll" to="about" smooth={true} offset={this.state.navHeightOffset} onClick={this.handleClickNavBarToggler}>
+                                <Link className="nav-link js-scroll" to="about" smooth={true} offset={this.state.navHeightOffset} onClick={this.handleClickNavBarLink}>
                                 About
                                 </Link>
                             </li>
                             <li className="nav-item"  data-to-scrollspy-id="work">
-                                <Link className="nav-link js-scroll" to="work" smooth={true} offset={this.state.navHeightOffset} onClick={this.handleClickNavBarToggler}>
+                                <Link className="nav-link js-scroll" to="work" smooth={true} offset={this.state.navHeightOffset} onClick={this.handleClickNavBarLink}>
                                 Work
                                 </Link>
                             </li>
                             <li className="nav-item"  data-to-scrollspy-id="contact">
-                                <Link className="nav-link js-scroll" to="contact" smooth={true} offset={this.state.navHeightOffset} onClick={this.handleClickNavBarToggler}>
+                                <Link className="nav-link js-scroll" to="contact" smooth={true} offset={this.state.navHeightOffset} onClick={this.handleClickNavBarLink}>
                                 Contact
                                 </Link>
                             </li>
