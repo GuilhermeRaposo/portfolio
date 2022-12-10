@@ -59,7 +59,6 @@ export default class Navbar extends React.Component {
         this.props.updateNavHeightOffset(navHeight)
 
         window.addEventListener("scroll", () => {
-            console.log(window.pageYOffset)
             if (window.scrollY > 50) {
                 this.setState({
                     navBarReduce: true,

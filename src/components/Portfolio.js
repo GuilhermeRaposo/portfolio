@@ -24,7 +24,7 @@ export default class Portfolio extends React.Component {
                 },
                 DoubleClick: {
                     code: "https://github.com/GuilhermeRaposo/dbclick-test",
-                    app: "https://dbclick-test.herokuapp.com/"
+                    app: "https://guilhermeraposo.github.io/dbclick-test/"
                 }
             }
         }
