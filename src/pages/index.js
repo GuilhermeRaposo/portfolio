@@ -1,67 +1,67 @@
-import * as React from "react"
+import * as React from "react";
 import { graphql } from "gatsby";
 
-import Layout from "../components/layout"
-import { Seo } from "../components/seo"
+import Layout from "../components/layout";
+import { Seo } from "../components/seo";
 import Intro from "../components/Intro";
-import About from "../components/About"
+import About from "../components/About";
 import Portfolio from "../components/Portfolio";
 import Contact from "../components/Contact";
 
-import "normalize.css"
+import "normalize.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../components/stars.scss";
-import "../styles/style.css"
+import "../styles/style.css";
 
 import ScrollSpy from "react-ui-scrollspy";
 
 export default class IndexPage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      navHeightOffset: 0,
-      logos: []
-    };
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            navHeightOffset: 0,
+            logos: []
+        };
+    }
   
-  getNavHeightOffset = (value) => {
-    this.setState({ navHeightOffset: value })
-  };
+    getNavHeightOffset = (value) => {
+        this.setState({ navHeightOffset: value });
+    };
 
-  componentDidMount() {
+    componentDidMount() {
     // Prevents page from restoring scroll position on reload and breaking the rest of the content
     // Why is it happening???
-    window.scrollTo(0,0);
+        window.scrollTo(0,0);
 
-    this.setState({
-      logos: [
-        this.props.data.logo1.childImageSharp.gatsbyImageData,
-        this.props.data.logo2.childImageSharp.gatsbyImageData
-      ]
-    })
-  }
+        this.setState({
+            logos: [
+                this.props.data.logo1.childImageSharp.gatsbyImageData,
+                this.props.data.logo2.childImageSharp.gatsbyImageData
+            ]
+        });
+    }
 
-  render() {
-    return (
-      <Layout logos={this.state.logos} updateNavHeightOffset={this.getNavHeightOffset}>
-        <ScrollSpy scrollThrottle={30} offsetTop={0} activeClass="active" updateHistoryStack={false}>
-          <Intro id="home" navHeightOffset={this.state.navHeightOffset}/>
-          <About id="about"/>
-          <Portfolio id="work"/>
-          <Contact id="contact"/>
-        </ScrollSpy>
-      </Layout> 
-    )
-  }
+    render() {
+        return (
+            <Layout logos={this.state.logos} updateNavHeightOffset={this.getNavHeightOffset}>
+                <ScrollSpy scrollThrottle={30} offsetTop={0} activeClass="active" updateHistoryStack={false}>
+                    <Intro id="home" navHeightOffset={this.state.navHeightOffset}/>
+                    <About id="about"/>
+                    <Portfolio id="work"/>
+                    <Contact id="contact"/>
+                </ScrollSpy>
+            </Layout> 
+        );
+    }
 }
 
 export class Head extends React.Component {
-  render() {
-    return (
-      <Seo />
-    );
-  }
-};
+    render() {
+        return (
+            <Seo />
+        );
+    }
+}
 
 export const logoQuery = graphql`
 query MyQuery {
@@ -78,4 +78,4 @@ query MyQuery {
     	}
   	} 
 }
-`
+`;

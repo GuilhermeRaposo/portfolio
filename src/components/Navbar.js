@@ -1,6 +1,6 @@
 import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
-import { Link } from 'react-scroll'
+import { Link } from "react-scroll";
 
 export default class Navbar extends React.Component {
     constructor(props) {
@@ -23,8 +23,8 @@ export default class Navbar extends React.Component {
             navBarReduce: true,
             isMobileNavOpen: true,
             currentLogo: 2
-         });
-    }
+        });
+    };
 
     closeNavBar = () => {
         this.setState({
@@ -32,8 +32,8 @@ export default class Navbar extends React.Component {
             navBarReduce: (window.scrollY > 50) ? true : false,
             isMobileNavOpen: false,
             currentLogo: (window.scrollY > 50) ? 2 : 1
-        })
-    }
+        });
+    };
 
     handleClickNavBarToggler = () => {
         if (!this.state.isMobileNavOpen) {
@@ -48,15 +48,15 @@ export default class Navbar extends React.Component {
         if (this.state.isMobileNavOpen) {
             this.closeNavBar();
         }
-    }
+    };
 
     componentDidMount() {
         this.setState({
             currentLogo: 1,
-        })
+        });
         const navHeight = this.navElement.clientHeight;
         this.setState({ navHeightOffset: -Math.abs(navHeight) });
-        this.props.updateNavHeightOffset(navHeight)
+        this.props.updateNavHeightOffset(navHeight);
 
         window.addEventListener("scroll", () => {
             if (window.scrollY > 50) {
@@ -68,14 +68,14 @@ export default class Navbar extends React.Component {
             } 
             else {
                 if (!this.state.isMobileNavOpen)
-                this.setState({
-                    navBarReduce: false,
-                    navBarTrans: true,
-                    currentLogo: 1
-                });
+                    this.setState({
+                        navBarReduce: false,
+                        navBarTrans: true,
+                        currentLogo: 1
+                    });
             }
         });
-      }
+    }
 
       
 

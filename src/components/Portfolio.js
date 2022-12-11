@@ -1,9 +1,9 @@
 import React from "react";
 import { Element } from "react-scroll";
-import { StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image";
 
 // Images
-const quickwhois = "../images/quickwhois.png"
+const quickwhois = "../images/quickwhois.png";
 const galaxyEdge = "../images/galaxy-edge.png";
 const mouse = "../images/mouse.png";
 const visitArrow = "../images/visit-arrow.png";
@@ -28,7 +28,7 @@ export default class Portfolio extends React.Component {
                     app: "https://guilhermeraposo.github.io/dbclick-test/"
                 }
             }
-        }
+        };
     }
     render() {
         return (
@@ -48,7 +48,7 @@ export default class Portfolio extends React.Component {
                             </div>
                         </div>
                         <div className="row">
-                        <div className="col-md-4">
+                            <div className="col-md-4">
                                 <div className="work-box container">
                                     <div className="work-img">
                                         <StaticImage src={quickwhois} alt="Discord logo" className="img-fluid" />
@@ -140,10 +140,10 @@ export default class Portfolio extends React.Component {
                                     </div>
                                 </div>
                             </div>
-            </div>
-            </div>
-        </section>
-      </Element>
-    );
-  }
+                        </div>
+                    </div>
+                </section>
+            </Element>
+        );
+    }
 }
