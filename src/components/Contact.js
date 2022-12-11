@@ -72,6 +72,9 @@ export default class Contact extends React.Component {
                       {` `}
                       <a href="https://www.gatsbyjs.com" className="gatsby-link">Gatsby</a>
                   </div>
+                  <div>
+                    <a href="https://github.com/GuilhermeRaposo/portfolio/" className="source-link">Page source code</a>
+                  </div>
                 </div>
               </div>
             </div>

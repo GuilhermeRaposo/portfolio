@@ -621,16 +621,20 @@ footer {
     margin-bottom: .3rem;
   }
 
-  .gatsby-link:link {
+  .gatsby-link:link, .source-link:link {
     color: #fff;
   }
 
-  .gatsby-link:visited {
+  .gatsby-link:visited, .source-link:visited {
       color: #fff;
   }
 
   .gatsby-link:hover {
       text-decoration: underline;
+  }
+
+  .source-link, .source-link:hover {
+    text-decoration: underline;
   }
 
   @media (min-width: 577px) {
