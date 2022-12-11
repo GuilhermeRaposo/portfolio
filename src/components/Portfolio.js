@@ -3,7 +3,7 @@ import { Element } from "react-scroll";
 import { StaticImage } from "gatsby-plugin-image"
 
 // Images
-const discord = "../images/discord.png";
+const quickwhois = "../images/quickwhois.png"
 const galaxyEdge = "../images/galaxy-edge.png";
 const mouse = "../images/mouse.png";
 const visitArrow = "../images/visit-arrow.png";
@@ -15,12 +15,13 @@ export default class Portfolio extends React.Component {
 
         this.state = {
             links: {
-                GameManager: {
-                    code: "https://github.com/HyperVS/GameManager"
+                QuickWhois: {
+                    app: "https://addons.mozilla.org/en-CA/firefox/addon/quick-who-is/",
+                    code: "https://github.com/GuilhermeRaposo/quick-who-is"
                 },
                 GalaxyEdge: {
                     code: "https://github.com/GuilhermeRaposo/GalaxyEdge",
-                    app: "https://galaxy-edge.herokuapp.com/"
+                    app: "https://guilhermeraposo.github.io/GalaxyEdge/"
                 },
                 DoubleClick: {
                     code: "https://github.com/GuilhermeRaposo/dbclick-test",
@@ -50,26 +51,25 @@ export default class Portfolio extends React.Component {
                         <div className="col-md-4">
                                 <div className="work-box container">
                                     <div className="work-img">
-                                        <StaticImage src={discord} alt="Discord logo" className="img-fluid" />
+                                        <StaticImage src={quickwhois} alt="Discord logo" className="img-fluid" />
                                     </div>
                                     <div className="work-content">
                                         <div className="row">
                                             <div className="col-sm-12">
-                                                <h2 className="w-title">Game Manager</h2>
+                                                <h2 className="w-title">Quick WHOIS</h2>
                                                 <div className="w-more">
                                                     <p className="w-about">
-                                                        Discord bot that helps creating fun and fair matches for
-                                                        a variety of games using a matchmacking system and ELO tracking
+                                                        Firefox add-on that lets you quickly search whois for the current page in two clicks
                                                     </p>
                                                     <span className="w-ctegory">
-                                                        Node.js Express MySQL
+                                                        HTML CSS JS
                                                     </span>
                                                     <div className="w-links row">
-                                                        <div className="w-link-buttonlink">
-                                                            <span className="w-link-button">WIP</span>
+                                                        <div className="link">
+                                                            <a href={this.state.links.QuickWhois.app} className="w-link-button">visit <StaticImage src={visitArrow} alt=""/></a>
                                                         </div>
                                                         <div className="link">
-                                                            <a href={this.state.links.GameManager.code} className="w-link-button"><StaticImage src={code} alt=""/> code</a>
+                                                            <a href={this.state.links.QuickWhois.code} className="w-link-button"><StaticImage src={code} alt=""/> code</a>
                                                         </div>
                                                     </div>
                                                 </div>

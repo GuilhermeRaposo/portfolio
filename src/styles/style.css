@@ -522,6 +522,7 @@ PORTFOLIO
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: #fff;
+    min-height: 518px;
   }
   
   .work-img {
