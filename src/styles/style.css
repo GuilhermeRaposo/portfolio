@@ -516,6 +516,10 @@ ABOUT
 PORTFOLIO
 */
 
+.work-box-row {
+  justify-content: center;
+}
+
 .work-box {
     margin-bottom: 3rem;
     padding-top: 15px;
@@ -536,6 +540,10 @@ PORTFOLIO
     padding: 2rem 3% 1rem 4%;
   }
   
+  .w-more {
+    min-height: 170px;
+  }
+
   .work-content .w-more {
     color: #4e4e4e;
     font-size: .8rem;
