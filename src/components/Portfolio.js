@@ -72,10 +72,10 @@ export default class Portfolio extends React.Component {
                                                     </span>
                                                     <div className="w-links row">
                                                         <div className="link">
-                                                            <a href={this.state.links.QuickWhois.app} className="w-link-button">visit <StaticImage src={visitArrow} alt=""/></a>
+                                                            <a href={this.state.links.SteamAccountSwitcher.app} className="w-link-button">visit <StaticImage src={visitArrow} alt=""/></a>
                                                         </div>
                                                         <div className="link">
-                                                            <a href={this.state.links.QuickWhois.code} className="w-link-button"><StaticImage src={code} alt=""/> code</a>
+                                                            <a href={this.state.links.SteamAccountSwitcher.code} className="w-link-button"><StaticImage src={code} alt=""/> code</a>
                                                         </div>
                                                     </div>
                                                 </div>
