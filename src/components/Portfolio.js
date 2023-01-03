@@ -68,7 +68,7 @@ export default class Portfolio extends React.Component {
                                                         your credentials. Doesn't store any user information or passwords.
                                                     </p>
                                                     <span className="w-ctegory">
-                                                        Python
+                                                        C# .NET AvaloniaUI
                                                     </span>
                                                     <div className="w-links row">
                                                         <div className="link">

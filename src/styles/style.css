@@ -534,6 +534,7 @@ PORTFOLIO
     overflow: hidden;
     max-width: 320px;
     max-height: 280px;
+    text-align: center;
   }
 
   .work-content {
