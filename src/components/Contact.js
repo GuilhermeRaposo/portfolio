@@ -46,7 +46,7 @@ export default class Contact extends React.Component {
                                                 </li>
                                                 <li key="linkedin">
                                                     <a
-                                                        href="https://www.linkedin.com/in/guilherme-raposo-470010199/"
+                                                        href="https://www.linkedin.com/in/guiraposo/"
                                                         target="_blank"
                                                         rel="noopener noreferrer"
                                                     >
