@@ -1,40 +1,40 @@
 import React from "react";
 import { Element } from "react-scroll";
 import { StaticImage } from "gatsby-plugin-image";
+import PropTypes from "prop-types";
 
 // Images
-const steam = "../images/steam.png"
+const steam = "../images/steam.png";
 const quickwhois = "../images/quickwhois.png";
 const galaxyEdge = "../images/galaxy-edge.png";
 const mouse = "../images/mouse.png";
 const visitArrow = "../images/visit-arrow.png";
 const code = "../images/code.png";
 
+const links = {
+    SteamAccountSwitcher: {
+        app: "https://github.com/GuilhermeRaposo/Steam-Account-Switcher/releases",
+        code: "https://github.com/GuilhermeRaposo/Steam-Account-Switcher"
+    },
+    QuickWhois: {
+        app: "https://addons.mozilla.org/en-CA/firefox/addon/quick-who-is/",
+        code: "https://github.com/GuilhermeRaposo/quick-who-is"
+    },
+    GalaxyEdge: {
+        code: "https://github.com/GuilhermeRaposo/GalaxyEdge",
+        app: "https://guilhermeraposo.github.io/GalaxyEdge/"
+    },
+    DoubleClick: {
+        code: "https://github.com/GuilhermeRaposo/dbclick-test",
+        app: "https://guilhermeraposo.github.io/dbclick-test/"
+    }
+};
+
 export default class Portfolio extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            links: {
-                SteamAccountSwitcher: {
-                    app: "https://github.com/GuilhermeRaposo/Steam-Account-Switcher/releases",
-                    code: "https://github.com/GuilhermeRaposo/Steam-Account-Switcher"
-                },
-                QuickWhois: {
-                    app: "https://addons.mozilla.org/en-CA/firefox/addon/quick-who-is/",
-                    code: "https://github.com/GuilhermeRaposo/quick-who-is"
-                },
-                GalaxyEdge: {
-                    code: "https://github.com/GuilhermeRaposo/GalaxyEdge",
-                    app: "https://guilhermeraposo.github.io/GalaxyEdge/"
-                },
-                DoubleClick: {
-                    code: "https://github.com/GuilhermeRaposo/dbclick-test",
-                    app: "https://guilhermeraposo.github.io/dbclick-test/"
-                }
-            }
-        };
     }
+
     render() {
         return (
             <Element id={this.props.id} name="work">
@@ -65,17 +65,17 @@ export default class Portfolio extends React.Component {
                                                 <div className="w-more">
                                                     <p className="w-about">
                                                         Lightweight tool that helps you switch steam accounts in a few clicks without
-                                                        your credentials. Doesn't store any user information or passwords.
+                                                        your credentials. Doesn&apos;t store any user information or passwords.
                                                     </p>
                                                     <span className="w-ctegory">
                                                         C# .NET AvaloniaUI
                                                     </span>
                                                     <div className="w-links row">
                                                         <div className="link">
-                                                            <a href={this.state.links.SteamAccountSwitcher.app} className="w-link-button">visit <StaticImage src={visitArrow} alt=""/></a>
+                                                            <a href={links.SteamAccountSwitcher.app} className="w-link-button">visit <StaticImage src={visitArrow} alt=""/></a>
                                                         </div>
                                                         <div className="link">
-                                                            <a href={this.state.links.SteamAccountSwitcher.code} className="w-link-button"><StaticImage src={code} alt=""/> code</a>
+                                                            <a href={links.SteamAccountSwitcher.code} className="w-link-button"><StaticImage src={code} alt=""/> code</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -104,10 +104,10 @@ export default class Portfolio extends React.Component {
                                                     </span>
                                                     <div className="w-links row">
                                                         <div className="link">
-                                                            <a href={this.state.links.QuickWhois.app} className="w-link-button">visit <StaticImage src={visitArrow} alt=""/></a>
+                                                            <a href={links.QuickWhois.app} className="w-link-button">visit <StaticImage src={visitArrow} alt=""/></a>
                                                         </div>
                                                         <div className="link">
-                                                            <a href={this.state.links.QuickWhois.code} className="w-link-button"><StaticImage src={code} alt=""/> code</a>
+                                                            <a href={links.QuickWhois.code} className="w-link-button"><StaticImage src={code} alt=""/> code</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -136,10 +136,10 @@ export default class Portfolio extends React.Component {
                                                     </span>
                                                     <div className="w-links row">
                                                         <div className="link">
-                                                            <a href={this.state.links.GalaxyEdge.app} className="w-link-button">visit <StaticImage src={visitArrow} alt=""/></a>
+                                                            <a href={links.GalaxyEdge.app} className="w-link-button">visit <StaticImage src={visitArrow} alt=""/></a>
                                                         </div>
                                                         <div className="link">
-                                                            <a href={this.state.links.GalaxyEdge.code} className="w-link-button"><StaticImage src={code} alt=""/> code</a>
+                                                            <a href={links.GalaxyEdge.code} className="w-link-button"><StaticImage src={code} alt=""/> code</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -168,10 +168,10 @@ export default class Portfolio extends React.Component {
                                                     </span>
                                                     <div className="w-links row">
                                                         <div className="link">
-                                                            <a href={this.state.links.DoubleClick.app} className="w-link-button">visit <StaticImage src={visitArrow} alt=""/></a>
+                                                            <a href={links.DoubleClick.app} className="w-link-button">visit <StaticImage src={visitArrow} alt=""/></a>
                                                         </div>
                                                         <div className="link">
-                                                            <a href={this.state.links.DoubleClick.code} className="w-link-button"><StaticImage src={code} alt=""/> code</a>
+                                                            <a href={links.DoubleClick.code} className="w-link-button"><StaticImage src={code} alt=""/> code</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -187,3 +187,7 @@ export default class Portfolio extends React.Component {
         );
     }
 }
+
+Portfolio.propTypes = {
+    id: PropTypes.string
+};

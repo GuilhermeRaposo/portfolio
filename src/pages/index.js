@@ -1,12 +1,13 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 import { Seo } from "../components/seo";
 import Intro from "../components/Intro";
 import About from "../components/About";
 import Portfolio from "../components/Portfolio";
 import Contact from "../components/Contact";
+import PropTypes from "prop-types";
 
 import "normalize.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -54,6 +55,10 @@ export default class IndexPage extends React.Component {
         );
     }
 }
+
+IndexPage.propTypes = {
+    data: PropTypes.string
+};
 
 export class Head extends React.Component {
     render() {

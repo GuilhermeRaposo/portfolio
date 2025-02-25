@@ -1,6 +1,7 @@
 import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { Link } from "react-scroll";
+import PropTypes from "prop-types";
 
 export default class Navbar extends React.Component {
     constructor(props) {
@@ -144,3 +145,8 @@ export default class Navbar extends React.Component {
         );
     }
 }
+
+Navbar.propTypes = {
+    logos: PropTypes.array,
+    updateNavHeightOffset: PropTypes.func,
+};

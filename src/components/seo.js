@@ -1,5 +1,6 @@
 import React from "react";
 import { useSiteMetadata } from "../hooks/use-site-metadata";
+import PropTypes from "prop-types";
 
 export const Seo = ({ title, description, author, pathname, children }) => {
     const { title: defaultTitle, description: defaultDescription, siteUrl, author: defaultAuthor } = useSiteMetadata();
@@ -21,4 +22,12 @@ export const Seo = ({ title, description, author, pathname, children }) => {
             {children}
         </>
     );
+};
+
+Seo.propTypes = {
+    title: PropTypes.string,
+    description: PropTypes.string,
+    author: PropTypes.string,
+    pathname: PropTypes.string,
+    children: PropTypes.element,
 };

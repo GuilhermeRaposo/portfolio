@@ -1,5 +1,6 @@
 import React from "react";
 import { Element } from "react-scroll";
+import PropTypes from "prop-types";
 
 export default class About extends React.Component {
     render() {
@@ -13,15 +14,15 @@ export default class About extends React.Component {
                             </div>
                             <p className="lead">
                                 Software Engineer and Computer Science student who 
-                                is eager to learn and grow, currently residing in Vancouver. 
-                                I have experience using Node.js, CSS, React, TypeScript, MongoDB and MySQL
+                                is eager to learn and grow, currently residing in Calgary - AB. 
+                                I have experience using Node.js, CSS, React, TypeScript, C#, MongoDB and MySQL
                             </p>
                             <p className="about-resume lead">
                                 You can check out my resume <a 
-                                href="https://drive.google.com/file/d/1vp6M7vehw5U1GprNnEieyl9fPrbqMxa2/view?usp=sharing" 
-                                target="_blank"
-                                rel="noopener noreferrer" 
-                                className="resume-link" 
+                                    href="https://drive.google.com/file/d/1vp6M7vehw5U1GprNnEieyl9fPrbqMxa2/view?usp=sharing" 
+                                    target="_blank"
+                                    rel="noopener noreferrer" 
+                                    className="resume-link" 
                                 > Here </a>
                             </p>
                         </div>
@@ -31,3 +32,7 @@ export default class About extends React.Component {
         );
     }
 }
+
+About.propTypes = {
+    id: PropTypes.string
+};

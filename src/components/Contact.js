@@ -3,6 +3,7 @@ import imageOverlay from "../images/earth.jpg";
 import { Element } from "react-scroll";
 import { SiGithub } from "@react-icons/all-files/si/SiGithub";
 import {  AiFillLinkedin } from "@react-icons/all-files/ai/AiFillLinkedin";
+import PropTypes from "prop-types";
 
 export default class Contact extends React.Component {
     render() {
@@ -84,3 +85,7 @@ export default class Contact extends React.Component {
         );
     }
 }
+
+Contact.propTypes = {
+    id: PropTypes.string
+};

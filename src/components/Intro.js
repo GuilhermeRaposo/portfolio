@@ -1,6 +1,7 @@
 import React from "react";
 import Typed from "typed.js";
 import { Element, Link } from "react-scroll";
+import PropTypes from "prop-types";
 
 export default class Intro extends React.Component {
     componentDidMount() {
@@ -55,3 +56,8 @@ export default class Intro extends React.Component {
         );
     }
 }
+
+Intro.propTypes = {
+    id: PropTypes.string,
+    navHeightOffset: PropTypes.number
+};
