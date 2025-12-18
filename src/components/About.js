@@ -23,13 +23,12 @@ export default class About extends React.Component {
                             <p className="about-resume lead">
                                 You can check out my resume{" "}
                                 <a
-                                    href="https://drive.google.com/file/d/1vp6M7vehw5U1GprNnEieyl9fPrbqMxa2/view?usp=sharing"
+                                    href="https://drive.google.com/file/d/17pdLUG1iEHuGhvYK2Yul9xt_llho6QeE/view?usp=sharing"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="resume-link"
                                 >
-                                    {" "}
-                                    Here{" "}
+                                    Here
                                 </a>
                             </p>
                         </div>
