@@ -4,6 +4,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import PropTypes from "prop-types";
 
 // Images
+const nes = "../images/nes.png";
 const steam = "../images/steam.png";
 const quickwhois = "../images/quickwhois.png";
 const portal = "../images/portal.png";
@@ -12,6 +13,9 @@ const visitArrow = "../images/visit-arrow.png";
 const code = "../images/code.png";
 
 const links = {
+    Smolnesrs: {
+        code: "https://github.com/GuilhermeRaposo/smolnes-rs",
+    },
     SteamAccountSwitcher: {
         app: "https://github.com/GuilhermeRaposo/Steam-Account-Switcher/releases",
         code: "https://github.com/GuilhermeRaposo/Steam-Account-Switcher",
@@ -53,6 +57,61 @@ export default class Portfolio extends React.Component {
                             </div>
                         </div>
                         <div className="row work-box-row">
+                            <div className="col-md-4">
+                                <div className="work-box">
+                                    <div className="work-img">
+                                        <StaticImage
+                                            src={nes}
+                                            alt="NES"
+                                            className="img-fluid"
+                                        />
+                                    </div>
+                                    <div className="work-content">
+                                        <div className="row">
+                                            <div className="col-sm-12">
+                                                <h2 className="w-title">
+                                                    SmolNES-rs
+                                                </h2>
+                                                <div className="w-more">
+                                                    <p className="w-about">
+                                                        smolnes-rs is a Rust
+                                                        port of smolnes, a tiny
+                                                        and intentionally
+                                                        minimal NES emulator
+                                                        originally written in C.
+                                                        This project focuses on
+                                                        staying as close as
+                                                        possible to the original
+                                                        implementation.
+                                                    </p>
+                                                    <span className="w-ctegory">
+                                                        Rust C
+                                                    </span>
+                                                    <div className="w-links row">
+                                                        <div className="link">
+                                                            <a
+                                                                href={
+                                                                    links
+                                                                        .Smolnesrs
+                                                                        .code
+                                                                }
+                                                                className="w-link-button"
+                                                            >
+                                                                <StaticImage
+                                                                    src={code}
+                                                                    alt=""
+                                                                />{" "}
+                                                                code
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div className="col-md-4">
                                 <div className="work-box">
                                     <div className="work-img">
